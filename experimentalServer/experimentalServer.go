@@ -29,11 +29,11 @@ type ResponseJSON struct {
 func fetchDNSInfo(queryString string) (fdns_a []string, rdns []string, errors []string) {
 
 	// fetch from our files
-	fdns_a, err := DNSBinarySearch("fdns_a.sort.txt", queryString, DefaultLimits)
+	fdns_a, err := DNSBinarySearch("/home/ubuntu/DNSGrep/fdns_a.sort.txt", queryString, DefaultLimits)
 	if err != nil {
 		errors = append(errors, fmt.Sprintf("fdns_a error: %+v", err))
 	}
-	rdns, err = DNSBinarySearch("rdns.sort.txt", queryString, DefaultLimits)
+	rdns, err = DNSBinarySearch("/home/ubuntu/DNSGrep/rdns.sort.txt", queryString, DefaultLimits)
 	if err != nil {
 		errors = append(errors, fmt.Sprintf("rdns error: %+v", err))
 	}
@@ -67,6 +67,7 @@ func DNSHandler(w http.ResponseWriter, r *http.Request) {
 		}
 		ret.Meta.Runtime = runtimeStr
 		ret.Meta.Errors = errors
+
 		// TODO -- these really should come in via a config file
 		ret.Meta.FileNames = []string{"2019-01-25-1548417890-fdns_a.json.gz", "2019-01-30-1548868121-rdns.json.gz"}
 		ret.Meta.TOS = "The source of this data is Rapid7 Labs. Please review the Terms of Service: https://opendata.rapid7.com/about/"
