@@ -3,11 +3,9 @@
 package main
 
 import (
-	. "dnsgrep/DNSBinarySearch"
-
+	"./DNSBinarySearch"
 	"fmt"
 	"os"
-
 	"github.com/jessevdk/go-flags"
 )
 
