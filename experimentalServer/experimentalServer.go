@@ -1,7 +1,7 @@
 package main
 
 import (
-	"./DNSBinarySearch"
+	"../DNSBinarySearch"
 	"encoding/json"
 	"fmt"
 	"log"
