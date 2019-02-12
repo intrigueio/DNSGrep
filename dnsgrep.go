@@ -3,7 +3,7 @@
 package main
 
 import (
-	"./DNSBinarySearch"
+	. "./DNSBinarySearch"
 	"fmt"
 	"os"
 	"github.com/jessevdk/go-flags"
