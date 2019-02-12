@@ -1,13 +1,12 @@
 package main
 
 import (
-	. "dnsgrep/DNSBinarySearch"
+	"./DNSBinarySearch"
 	"encoding/json"
 	"fmt"
 	"log"
 	"net/http"
 	"time"
-
 	"github.com/gorilla/mux"
 )
 
