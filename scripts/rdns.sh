@@ -1,5 +1,5 @@
 # fetch the rdns file
-wget --quiet -O rdns.gz https://opendata.rapid7.com/sonar.rdns_v2/2019-05-29-1559088305-rdns.json.gz	
+wget --quiet -O rdns.gz https://opendata.rapid7.com/sonar.rdns_v2/2019-09-26-1569479865-rdns.json.gz
 
 # extract and format our data
 gunzip --quiet -c rdns.gz | jq -r '.name + ","+ .value' | tr '[:upper:]' '[:lower:]' | rev > rdns.rev.lowercase.txt
