@@ -1,4 +1,6 @@
 # DNSGrep
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fintrigueio%2FDNSGrep.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fintrigueio%2FDNSGrep?ref=badge_shield)
+
 A utility for quickly searching presorted DNS names. Built around the Rapid7 rdns & fdns dataset.
 
 # How does it work?
@@ -81,3 +83,6 @@ via https://unix.stackexchange.com/a/350068
 # License
 
 See LICENSE file.
+
+
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fintrigueio%2FDNSGrep.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fintrigueio%2FDNSGrep?ref=badge_large)
