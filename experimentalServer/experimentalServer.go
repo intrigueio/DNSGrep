@@ -1,7 +1,7 @@
 package main
 
 import (
-	. "dnsgrep/DNSBinarySearch"
+	. "../DNSBinarySearch"
 	"encoding/json"
 	"fmt"
 	"github.com/gorilla/mux"
@@ -51,11 +51,11 @@ func GetMeta(path string) (MetaConfig *MetaJSON) {
 func fetchDNSInfo(queryString string) (fdns_a []string, rdns []string, errors []string) {
 
 	// fetch from our files
-	fdns_a, err := DNSBinarySearch("../fdns_a.sort.txt", queryString, DefaultLimits)
+	fdns_a, err := DNSBinarySearch("/home/ubuntu/DNSGrep/fdns_a.sort.txt", queryString, DefaultLimits)
 	if err != nil {
 		errors = append(errors, fmt.Sprintf("fdns_a error: %+v", err))
 	}
-	rdns, err = DNSBinarySearch("../rdns.sort.txt", queryString, DefaultLimits)
+	rdns, err = DNSBinarySearch("/home/ubuntu/DNSGrep/rdns.sort.txt", queryString, DefaultLimits)
 	if err != nil {
 		errors = append(errors, fmt.Sprintf("rdns error: %+v", err))
 	}
@@ -94,6 +94,7 @@ func DNSHandler(w http.ResponseWriter, r *http.Request) {
 		}
 		ret.Meta.Runtime = runtimeStr
 		ret.Meta.Errors = errors
+
 		// TODO -- these really should come in via a config file
 		ret.Meta.Message = metaCfg.Message
 		ret.Meta.FileNames = metaCfg.FileNames

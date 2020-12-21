@@ -2,7 +2,7 @@
 wget -O rdns.gz https://opendata.rapid7.com/sonar.rdns_v2/2020-11-25-1606262702-rdns.json.gz
 
 # extract and format our data
-gunzip -c rdns.gz | jq -r '.name + ","+ .value' | tr '[:upper:]' '[:lower:]' | rev > rdns.rev.lowercase.txt
+gunzip --quiet -c rdns.gz | jq -r '.name + ","+ .value' | tr '[:upper:]' '[:lower:]' | rev > rdns.rev.lowercase.txt
 
 # split the data into chunks ot sort
 split -b100M rdns.rev.lowercase.txt fileChunk
