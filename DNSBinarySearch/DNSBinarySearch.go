@@ -28,7 +28,7 @@ type Limits struct {
 
 var DefaultLimits = Limits{
 	MaxScan:        100,    // 10MB
-	MaxOutputLines: 10000000, // 10,000,000 lines
+	MaxOutputLines: 1000000, // 1,000,000 lines
 }
 
 // fetches a string buffer from a file
