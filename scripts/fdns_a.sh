@@ -1,5 +1,5 @@
 # fetch the fdns_a file
-wget --quiet -O fdns_a.gz https://opendata.rapid7.com/sonar.fdns_v2/2020-11-27-1606435855-fdns_a.json.gz
+wget --quiet -O fdns_a.gz https://opendata.rapid7.com/sonar.fdns_v2/2021-05-29-1622251124-fdns_any.json.gz
 
 # extract and format our data
 gunzip --quiet -c fdns_a.gz | jq -r '.value + ","+ .name' | tr '[:upper:]' '[:lower:]' | rev > fdns_a.rev.lowercase.txt
